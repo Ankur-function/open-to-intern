@@ -1,5 +1,4 @@
 const CollegeModel = require("../Models/CollegeModel")
-const InternModel = require("../Models/InternModel")
 
 const isValid = function (value) {
 

@@ -54,23 +54,41 @@ const createintern = async function (req, res) {
 
 const getinterndetails = async function (req, res) {
     try {
-        const data = req.query
+        let data = req.query.collegeName
+        if (!data) { return res.status(400).send({ status: false, msg: "please give the input" }) }
 
 
-        const details = await CollegeModel.findOne({data})
-        if (details.length == 0) return res.status(404).send({ status: false, msg: "No details Available." })
+        let colleged = await CollegeModel.find({ name: data, isDeleted: false })
+        if (!colleged) return res.status(400).send({ msg: "College is not in the list " })
 
-        if(!details) return res.status(400).send("your college is not there in the list")
+        let List1 = colleged[0]._id
 
-        let clgdetails =  details._id
+        console.log(List1)
 
-        let internlist = await InternModel.find({clgdetails})
-        res.status(201).send({ msg: details, interest: internlist });
+        let interned = await InternModel.find({ "collegeId": List1, isDeleted: false })
+        if (!interned) return res.status(400).send("college id not exist")
+        students = []
+
+        for (let i = 0; i < interned.length; i++) {
+            let Object = {}
+            Object._id = interned[i]._id
+            Object.name = interned[i].name
+            Object.email = interned[i].email
+            Object.mobile = interned[i].mobile
+            students.push(Object)
+        }
+
+        const ObjectData = {
+            name: colleged[0].name,
+            fullName: colleged[0].fullName,
+            logoLink: colleged[0].logoLink,
+            interest: students
+        }
+
+        res.status(201).send({ College_details: ObjectData })
     }
-
-
     catch (error) {
-        res.status(500).send({ status: false, msg: error.message });
+        res.status(500).send({ msg: error.message })
     }
 }
 
