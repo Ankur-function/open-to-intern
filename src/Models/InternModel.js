@@ -10,8 +10,9 @@ const internSchema = new mongoose.Schema({
      "email": {
         type: String,
         validate:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"Please enter a valid email"],
-    
-        unique: true,
+        required: true,
+        trim: true,
+        unique: true
     },
       "mobile": {
           type : String,

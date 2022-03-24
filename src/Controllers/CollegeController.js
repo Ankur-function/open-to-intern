@@ -18,6 +18,9 @@ const createcollege = async function (req, res) {
         let data = req.body
 
         const { name, fullName, logoLink } = data
+        if(Object.keys(data)==0){
+            return res.status(400).send({ status: false, msg: " data is  missing" })
+          }
 
         const req0 = isValid(name)
         if (!req0) return res.status(400).send('name is require')
@@ -27,6 +30,10 @@ const createcollege = async function (req, res) {
 
         const req2 = isValid(logoLink)
         if (!req2) return res.status(400).send('logoLink require')
+
+        if (!(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%.\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%\+.~#?&//=]*)/.test(logoLink))) {
+    return res.status(400).send({ status: false, message: "please enter a valid logo link" })
+  }
 
         
           let collegeCreated = await CollegeModel.create(data)
