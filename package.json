@@ -1,0 +1,19 @@
+{
+  "name": "intern-college(project2)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "express": "^4.17.3",
+    "mobile-validator": "^1.0.1",
+    "mongoose": "^6.2.7",
+    "node-modules": "^1.0.1"
+  }
+}
