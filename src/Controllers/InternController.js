@@ -99,3 +99,4 @@ const getinterndetails = async function (req, res) {
 
 module.exports.createintern=createintern
 module.exports.getinterndetails=getinterndetails
+
