@@ -43,67 +43,132 @@ Refer below sample
 A Postman collection and request sample
 
 Response
-Successful Response structure
-{
-  status: true,
-  data: {
 
+Successful Response structure
+
+    {
+    
+     status: true,
+     
+     data: {
+     
+
+     }
+     
   }
-}
+  
 Error Response structure
+
 {
+
   status: false,
+  
   message: ""
+  
 }
+
 Collections samples
+
 College
-{
-    "name" : "iith",
-    "fullName" : "Indian Institute of Technology, Hyderabad",
-    "logoLink" : "https://functionup.s3.ap-south-1.amazonaws.com/colleges/iith.png",
-    "isDeleted" : false
-}
-Intern
+
    {
-    "isDeleted" : false,
-    "name" : "Jane Does",
-    "email" : "jane.doe@iith.in",
-    "mobile" : "90000900000",
-    "collegeId" : ObjectId("888771129c9ea621dc7f5e3b")
+    
+    "name" : "iith",
+    
+    "fullName" : "Indian Institute of Technology, Hyderabad",
+    
+    "logoLink" : "https://functionup.s3.ap-south-1.amazonaws.com/colleges/iith.png",
+    
+    "isDeleted" : false
+    
 }
+
+Intern
+
+   {
+   
+    "isDeleted" : false,
+    
+    "name" : "Jane Does",
+    
+    "email" : "jane.doe@iith.in",
+    
+    "mobile" : "90000900000",
+    
+    "collegeId" : ObjectId("888771129c9ea621dc7f5e3b")
+    
+}
+
 Response samples
 
+
+
 College details
+
+
 {
+
   "data": {
+  
     "name": "xyz",
+    
     "fullName": "Some Institute of Engineering and Technology",
+    
     "logoLink": "some public s3 link for a college logo",
+    
     "interests": [
+    
       {
+      
         "_id": "123a47301a53ecaeea02be59",
+        
         "name": "Jane Doe",
+        
         "email": "jane.doe@miet.ac.in",
+        
         "mobile": "8888888888"
+        
       },
+      
       {
+      
         "_id": "45692c0e1a53ecaeea02b1ac",
+        
         "name": "John Doe",
+        
         "email": "john.doe@miet.ac.in",
+        
         "mobile": "9999999999"
+        
       },
+      
       {
+      
         "_id": "7898d0251a53ecaeea02a623",
+        
         "name": "Sukruti",
+        
         "email": "dummy.email@miet.ac.in",
+        
         "mobile": "9191919191"
+        
       },
+      
       {
+      
         "_id": "999803da1a53ecaeea02a07e",
+        
         "name": "Neeraj Kumar",
+        
         "email": "another.example@miet.ac.in",
+        
         "mobile": "9898989898"
+        
       }
+      
     ]
+    
   }
+  
 }
+
